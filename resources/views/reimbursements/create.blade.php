@@ -45,7 +45,7 @@
                 <div class="mb-6">
                     <label for="project_id" class="block text-sm font-medium text-gray-700">Project</label>
                     <select name="project_id" id="project_id"
-                            class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                            class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                         <option value="">— Select Project —</option>
                         @foreach($projects as $project)
                             <option value="{{ $project->id }}" {{ old('project_id') == $project->id ? 'selected' : '' }}>
@@ -64,12 +64,12 @@
                     <div class="flex items-center gap-6">
                         <label class="inline-flex items-center">
                             <input type="radio" name="type" value="direct_claim" x-model="type"
-                                   class="rounded-full border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                   class="rounded-full border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                             <span class="ml-2 text-sm text-gray-700">Direct Claim</span>
                         </label>
                         <label class="inline-flex items-center">
                             <input type="radio" name="type" value="ca_settlement" x-model="type"
-                                   class="rounded-full border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                   class="rounded-full border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                             <span class="ml-2 text-sm text-gray-700">CA Settlement</span>
                         </label>
                     </div>
@@ -87,7 +87,7 @@
                                 <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-100">
                                     <input type="checkbox" name="cash_advance_ids[]" value="{{ $ca->id }}"
                                            {{ in_array($ca->id, old('cash_advance_ids', [])) ? 'checked' : '' }}
-                                           class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                           class="rounded border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                                     <span class="text-sm text-gray-900 font-medium">{{ $ca->ca_number }}</span>
                                     <span class="text-sm text-gray-500">— Outstanding: Rp {{ number_format($ca->outstanding_amount, 0, ',', '.') }}</span>
                                 </label>
@@ -108,7 +108,7 @@
                 <div class="mb-6">
                     <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                     <textarea name="description" id="description" rows="3"
-                              class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                              class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                               placeholder="Describe the reimbursement purpose...">{{ old('description') }}</textarea>
                     @error('description')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -120,7 +120,7 @@
                     <div class="flex items-center justify-between mb-3">
                         <label class="block text-sm font-medium text-gray-700">Reimbursement Items</label>
                         <button type="button" @click="addItem()"
-                                class="inline-flex items-center px-3 py-1.5 bg-indigo-50 border border-indigo-200 rounded-lg text-xs font-semibold text-indigo-700 uppercase tracking-widest hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                                class="inline-flex items-center px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-lg text-xs font-semibold text-blue-800 uppercase tracking-widest hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">
                             + Add Item
                         </button>
                     </div>
@@ -133,14 +133,14 @@
                                     <div class="lg:col-span-2">
                                         <label class="block text-xs font-medium text-gray-500 mb-1">Date</label>
                                         <input type="date" :name="'items[' + index + '][date]'" x-model="item.date"
-                                               class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                               class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                                     </div>
 
                                     {{-- Category --}}
                                     <div class="lg:col-span-2">
                                         <label class="block text-xs font-medium text-gray-500 mb-1">Category</label>
                                         <select :name="'items[' + index + '][category]'" x-model="item.category"
-                                                class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                                class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                                             <option value="">— Select —</option>
                                             @foreach($categories as $key => $label)
                                                 <option value="{{ $key }}">{{ $label }}</option>
@@ -153,7 +153,7 @@
                                         <label class="block text-xs font-medium text-gray-500 mb-1">Description</label>
                                         <input type="text" :name="'items[' + index + '][description]'" x-model="item.description"
                                                placeholder="Item description"
-                                               class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                               class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                                     </div>
 
                                     {{-- Amount --}}
@@ -161,14 +161,14 @@
                                         <label class="block text-xs font-medium text-gray-500 mb-1">Amount (Rp)</label>
                                         <input type="number" :name="'items[' + index + '][amount]'" x-model="item.amount"
                                                min="0" step="1" placeholder="0"
-                                               class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                               class="block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                                     </div>
 
                                     {{-- Receipt --}}
                                     <div class="lg:col-span-2">
                                         <label class="block text-xs font-medium text-gray-500 mb-1">Receipt</label>
                                         <input type="file" :name="'items[' + index + '][receipt]'" accept=".jpg,.jpeg,.png,.pdf"
-                                               class="block w-full text-sm text-gray-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                                               class="block w-full text-sm text-gray-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-800 hover:file:bg-blue-100">
                                     </div>
 
                                     {{-- Remove --}}
@@ -196,11 +196,11 @@
                 {{-- Actions --}}
                 <div class="flex items-center justify-end gap-4">
                     <a href="{{ route('reimbursements.index') }}"
-                       class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                       class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg font-semibold text-xs text-gray-700 uppercase tracking-widest hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">
                         Cancel
                     </a>
                     <button type="submit"
-                            class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-lg font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 to-cyan-600 border border-transparent rounded-lg font-semibold text-xs text-white uppercase tracking-widest hover:from-blue-950 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150">
                         Create Reimbursement
                     </button>
                 </div>

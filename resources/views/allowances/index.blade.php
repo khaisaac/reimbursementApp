@@ -6,7 +6,7 @@
                 <p class="text-sm text-gray-500 mt-0.5">Manage daily allowance claims</p>
             </div>
             <a href="{{ route('allowances.create') }}"
-               class="inline-flex items-center gap-2 px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm">
+               class="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                 </svg>
@@ -23,12 +23,12 @@
                     <label for="search" class="sr-only">Search</label>
                     <input type="text" name="search" id="search" value="{{ request('search') }}"
                            placeholder="Search allowance number, user, project..."
-                           class="w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                 </div>
                 <div class="sm:w-56">
                     <label for="status" class="sr-only">Status</label>
                     <select name="status" id="status"
-                            class="w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                            class="w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                         <option value="">All Statuses</option>
                         <option value="draft" {{ request('status') === 'draft' ? 'selected' : '' }}>Draft</option>
                         <option value="submitted" {{ request('status') === 'submitted' ? 'selected' : '' }}>Submitted</option>
@@ -70,7 +70,7 @@
                     @forelse($allowances as $allowance)
                         <tr class="table-row-hover">
                             <td class="px-6 py-4 whitespace-nowrap text-sm">
-                                <a href="{{ route('allowances.show', $allowance) }}" class="text-indigo-600 hover:text-indigo-900 font-medium">
+                                <a href="{{ route('allowances.show', $allowance) }}" class="text-blue-800 hover:text-blue-900 font-medium">
                                     {{ $allowance->allowance_number }}
                                 </a>
                             </td>

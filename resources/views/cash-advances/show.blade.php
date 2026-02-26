@@ -111,8 +111,8 @@
                     {{-- Approved by PIC --}}
                     @if($cashAdvance->approved_by_pic_at)
                         <li class="ml-6">
-                            <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-100 ring-8 ring-white">
-                                <svg class="h-3 w-3 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                            <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white">
+                                <svg class="h-3 w-3 text-blue-800" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
                                 </svg>
                             </span>
@@ -173,7 +173,7 @@
                         <form method="POST" action="{{ route('cash-advances.approve', $cashAdvance) }}">
                             @csrf
                             <button type="submit"
-                                    class="inline-flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm"
+                                    class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm"
                                     onclick="return confirm('Are you sure you want to approve this cash advance?')">
                                 Approve as PIC
                             </button>
@@ -189,7 +189,7 @@
                                 <div>
                                     <label for="transfer_evidence" class="block text-sm font-medium text-gray-700">Transfer Evidence</label>
                                     <input type="file" name="transfer_evidence" id="transfer_evidence" accept=".jpg,.jpeg,.png,.pdf"
-                                           class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                                           class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-800 hover:file:bg-blue-100">
                                     @error('transfer_evidence')
                                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                     @enderror
@@ -197,7 +197,7 @@
                                 <div>
                                     <label for="transfer_date" class="block text-sm font-medium text-gray-700">Transfer Date</label>
                                     <input type="date" name="transfer_date" id="transfer_date" value="{{ old('transfer_date', now()->format('Y-m-d')) }}"
-                                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                                     @error('transfer_date')
                                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                     @enderror
@@ -258,7 +258,7 @@
                                 @foreach($cashAdvance->reimbursements as $reimbursement)
                                     <tr class="table-row-hover">
                                         <td class="px-4 py-3 whitespace-nowrap text-sm">
-                                            <a href="{{ route('reimbursements.show', $reimbursement) }}" class="text-indigo-600 hover:text-indigo-900 font-medium">
+                                            <a href="{{ route('reimbursements.show', $reimbursement) }}" class="text-blue-800 hover:text-blue-900 font-medium">
                                                 {{ $reimbursement->reimbursement_number }}
                                             </a>
                                         </td>

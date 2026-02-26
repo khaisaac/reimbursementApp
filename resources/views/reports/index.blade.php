@@ -16,7 +16,7 @@
                     <div>
                         <label for="month" class="block text-sm font-medium text-gray-700">Month</label>
                         <select name="month" id="month"
-                                class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                                class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                             @for($m = 1; $m <= 12; $m++)
                                 <option value="{{ $m }}" {{ (request('month', now()->month) == $m) ? 'selected' : '' }}>
                                     {{ DateTime::createFromFormat('!m', $m)->format('F') }}
@@ -30,7 +30,7 @@
                         <label for="year" class="block text-sm font-medium text-gray-700">Year</label>
                         <input type="number" name="year" id="year" value="{{ request('year', now()->year) }}"
                                min="2020" max="2099"
-                               class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                               class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     </div>
 
                     {{-- Type --}}
@@ -40,25 +40,25 @@
                             <label class="inline-flex items-center">
                                 <input type="radio" name="type" value="all"
                                        {{ request('type', 'all') === 'all' ? 'checked' : '' }}
-                                       class="rounded-full border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                       class="rounded-full border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                                 <span class="ml-2 text-sm text-gray-700">All</span>
                             </label>
                             <label class="inline-flex items-center ml-4">
                                 <input type="radio" name="type" value="cash_advance"
                                        {{ request('type') === 'cash_advance' ? 'checked' : '' }}
-                                       class="rounded-full border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                       class="rounded-full border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                                 <span class="ml-2 text-sm text-gray-700">Cash Advance</span>
                             </label>
                             <label class="inline-flex items-center ml-4">
                                 <input type="radio" name="type" value="allowance"
                                        {{ request('type') === 'allowance' ? 'checked' : '' }}
-                                       class="rounded-full border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                       class="rounded-full border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                                 <span class="ml-2 text-sm text-gray-700">Allowance</span>
                             </label>
                             <label class="inline-flex items-center ml-4">
                                 <input type="radio" name="type" value="reimbursement"
                                        {{ request('type') === 'reimbursement' ? 'checked' : '' }}
-                                       class="rounded-full border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                       class="rounded-full border-gray-300 text-blue-800 shadow-sm focus:ring-blue-500">
                                 <span class="ml-2 text-sm text-gray-700">Reimbursement</span>
                             </label>
                         </div>
@@ -67,7 +67,7 @@
 
                 <div class="flex items-center gap-4">
                     <button type="submit"
-                            class="inline-flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm">
+                            class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm">
                         Generate Report
                     </button>
                     <a href="{{ route('reports.export', request()->query()) }}"

@@ -39,7 +39,7 @@
                 <div class="mb-6">
                     <label for="project_no" class="block text-sm font-medium text-gray-700">Project No</label>
                     <input type="text" name="project_no" id="project_no" value="{{ old('project_no', $project->project_no) }}"
-                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     @error('project_no')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -49,7 +49,7 @@
                 <div class="mb-6">
                     <label for="project_name" class="block text-sm font-medium text-gray-700">Project Name</label>
                     <input type="text" name="project_name" id="project_name" value="{{ old('project_name', $project->project_name) }}"
-                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     @error('project_name')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -59,7 +59,7 @@
                 <div class="mb-6">
                     <label for="pic_name" class="block text-sm font-medium text-gray-700">PIC Name</label>
                     <input type="text" name="pic_name" id="pic_name" value="{{ old('pic_name', $project->pic_name) }}"
-                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     @error('pic_name')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -69,7 +69,7 @@
                 <div class="mb-6">
                     <label for="alt_pic_name" class="block text-sm font-medium text-gray-700">Alt PIC Name <span class="text-gray-400">(Optional)</span></label>
                     <input type="text" name="alt_pic_name" id="alt_pic_name" value="{{ old('alt_pic_name', $project->alt_pic_name) }}"
-                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     @error('alt_pic_name')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -82,7 +82,7 @@
                         Cancel
                     </a>
                     <button type="submit"
-                            class="inline-flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm">
+                            class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm">
                         Update Project
                     </button>
                 </div>

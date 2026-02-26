@@ -12,8 +12,8 @@
         <div class="card-hover bg-white rounded-xl border border-gray-100 overflow-hidden">
             <div class="p-5 sm:p-6">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
@@ -56,8 +56,8 @@
         <div class="card-hover bg-white rounded-xl border border-gray-100 overflow-hidden">
             <div class="p-5 sm:p-6">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
@@ -97,7 +97,7 @@
     {{-- Quick Actions --}}
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
         <a href="{{ route('cash-advances.create') }}" class="card-hover group flex items-center gap-4 bg-white border border-gray-100 rounded-xl p-4 sm:p-5 transition-all">
-            <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-900 to-cyan-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                 </svg>
@@ -108,7 +108,7 @@
             </div>
         </a>
         <a href="{{ route('allowances.create') }}" class="card-hover group flex items-center gap-4 bg-white border border-gray-100 rounded-xl p-4 sm:p-5 transition-all">
-            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div class="w-10 h-10 bg-gradient-to-br from-cyan-600 to-blue-900 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                 </svg>
@@ -137,7 +137,7 @@
         <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
             <div class="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-gray-100">
                 <h3 class="font-semibold text-gray-900">Recent Cash Advances</h3>
-                <a href="{{ route('cash-advances.index') }}" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">View all →</a>
+                <a href="{{ route('cash-advances.index') }}" class="text-sm text-blue-800 hover:text-blue-900 font-medium">View all →</a>
             </div>
             @if($recentCa->isEmpty())
                 <div class="p-8 text-center">
@@ -160,7 +160,7 @@
                         @foreach($recentCa as $ca)
                         <tr class="table-row-hover">
                             <td class="px-4 sm:px-5 py-3">
-                                <a href="{{ route('cash-advances.show', $ca) }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-800">{{ $ca->ca_number }}</a>
+                                <a href="{{ route('cash-advances.show', $ca) }}" class="text-sm font-medium text-blue-800 hover:text-blue-900">{{ $ca->ca_number }}</a>
                                 <p class="text-xs text-gray-400 mt-0.5">{{ $ca->user->name }} · {{ $ca->project->project_no }}</p>
                             </td>
                             <td class="px-4 sm:px-5 py-3 text-right">
@@ -184,7 +184,7 @@
         <div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
             <div class="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-gray-100">
                 <h3 class="font-semibold text-gray-900">Recent Reimbursements</h3>
-                <a href="{{ route('reimbursements.index') }}" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">View all →</a>
+                <a href="{{ route('reimbursements.index') }}" class="text-sm text-blue-800 hover:text-blue-900 font-medium">View all →</a>
             </div>
             @if($recentReimbursements->isEmpty())
                 <div class="p-8 text-center">
@@ -207,7 +207,7 @@
                         @foreach($recentReimbursements as $rmb)
                         <tr class="table-row-hover">
                             <td class="px-4 sm:px-5 py-3">
-                                <a href="{{ route('reimbursements.show', $rmb) }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-800">{{ $rmb->reimbursement_number }}</a>
+                                <a href="{{ route('reimbursements.show', $rmb) }}" class="text-sm font-medium text-blue-800 hover:text-blue-900">{{ $rmb->reimbursement_number }}</a>
                                 <p class="text-xs text-gray-400 mt-0.5">{{ $rmb->user->name }} · {{ $rmb->type === 'ca_settlement' ? 'CA Settlement' : 'Direct Claim' }}</p>
                             </td>
                             <td class="px-4 sm:px-5 py-3 text-right">

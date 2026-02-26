@@ -110,9 +110,9 @@
 
                     {{-- Approved by Admin --}}
                     <li class="ml-6">
-                        <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full {{ $allowance->approved_by_admin_at ? 'bg-indigo-100' : 'bg-gray-50' }} ring-8 ring-white">
+                        <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full {{ $allowance->approved_by_admin_at ? 'bg-blue-100' : 'bg-gray-50' }} ring-8 ring-white">
                             @if($allowance->approved_by_admin_at)
-                                <svg class="h-3 w-3 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="h-3 w-3 text-blue-800" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
                                 </svg>
                             @else
@@ -131,9 +131,9 @@
 
                     {{-- Approved by PIC --}}
                     <li class="ml-6">
-                        <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full {{ $allowance->approved_by_pic_at ? 'bg-purple-100' : 'bg-gray-50' }} ring-8 ring-white">
+                        <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full {{ $allowance->approved_by_pic_at ? 'bg-cyan-100' : 'bg-gray-50' }} ring-8 ring-white">
                             @if($allowance->approved_by_pic_at)
-                                <svg class="h-3 w-3 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                <svg class="h-3 w-3 text-cyan-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
                                 </svg>
                             @else
@@ -210,7 +210,7 @@
                         <form method="POST" action="{{ route('allowances.approve', $allowance) }}">
                             @csrf
                             <button type="submit"
-                                    class="inline-flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm"
+                                    class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm"
                                     onclick="return confirm('Are you sure you want to approve this allowance as Admin?')">
                                 Approve as Admin
                             </button>
@@ -222,7 +222,7 @@
                         <form method="POST" action="{{ route('allowances.approve', $allowance) }}">
                             @csrf
                             <button type="submit"
-                                    class="inline-flex items-center px-4 py-2.5 bg-purple-600 text-white text-sm font-semibold rounded-lg hover:bg-purple-700 transition shadow-sm"
+                                    class="inline-flex items-center px-4 py-2.5 bg-cyan-600 text-white text-sm font-semibold rounded-lg hover:bg-cyan-700 transition shadow-sm"
                                     onclick="return confirm('Are you sure you want to approve this allowance as PIC?')">
                                 Approve as PIC
                             </button>

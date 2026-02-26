@@ -5,7 +5,7 @@
                 <h2 class="text-xl font-bold text-gray-900">Attendances</h2>
                 <p class="text-sm text-gray-500 mt-0.5">Track project attendance records</p>
             </div>
-            <a href="{{ route('attendances.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm">
+            <a href="{{ route('attendances.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                 New Attendance
             </a>
@@ -19,12 +19,12 @@
                 <div class="sm:w-48">
                     <label for="date" class="sr-only">Date</label>
                     <input type="date" name="date" id="date" value="{{ request('date') }}"
-                           class="w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                 </div>
                 <div class="sm:w-64">
                     <label for="project_id" class="sr-only">Project</label>
                     <select name="project_id" id="project_id"
-                            class="w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                            class="w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                         <option value="">All Projects</option>
                         @foreach($projects as $project)
                             <option value="{{ $project->id }}" {{ request('project_id') == $project->id ? 'selected' : '' }}>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="flex gap-2">
                     <button type="submit"
-                            class="inline-flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm">
+                            class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm">
                         Filter
                     </button>
                     <a href="{{ route('attendances.index') }}"
@@ -75,7 +75,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm">
                                 @if($attendance->location_link)
                                     <a href="{{ $attendance->location_link }}" target="_blank" rel="noopener noreferrer"
-                                       class="text-indigo-600 hover:text-indigo-900 underline">
+                                       class="text-blue-800 hover:text-blue-900 underline">
                                         View Location
                                     </a>
                                 @else

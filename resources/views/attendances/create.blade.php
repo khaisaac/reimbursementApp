@@ -38,7 +38,7 @@
                 <div class="mb-6">
                     <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
                     <input type="date" name="date" id="date" value="{{ old('date', date('Y-m-d')) }}"
-                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     @error('date')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -48,7 +48,7 @@
                 <div class="mb-6">
                     <label for="project_id" class="block text-sm font-medium text-gray-700">Project</label>
                     <select name="project_id" id="project_id"
-                            class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                            class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                         <option value="">— Select Project —</option>
                         @foreach($projects as $project)
                             <option value="{{ $project->id }}" {{ old('project_id') == $project->id ? 'selected' : '' }}>
@@ -66,7 +66,7 @@
                     <label for="location_link" class="block text-sm font-medium text-gray-700">Location Link</label>
                     <input type="url" name="location_link" id="location_link" value="{{ old('location_link') }}"
                            placeholder="https://maps.google.com/..."
-                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                           class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
                     @error('location_link')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -77,7 +77,7 @@
                     <label for="notes" class="block text-sm font-medium text-gray-700">Notes</label>
                     <textarea name="notes" id="notes" rows="3"
                               placeholder="Optional notes about your attendance..."
-                              class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ old('notes') }}</textarea>
+                              class="mt-1 block w-full rounded-lg border-gray-200 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">{{ old('notes') }}</textarea>
                     @error('notes')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
@@ -106,7 +106,7 @@
                         Cancel
                     </a>
                     <button type="submit"
-                            class="inline-flex items-center px-4 py-2.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition shadow-sm">
+                            class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-blue-900 to-cyan-600 text-white text-sm font-semibold rounded-lg hover:from-blue-950 hover:to-cyan-700 shadow-blue-900/25 transition shadow-sm">
                         Submit Attendance
                     </button>
                 </div>

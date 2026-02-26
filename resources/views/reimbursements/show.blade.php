@@ -90,7 +90,7 @@
                                 @foreach($reimbursement->cashAdvances as $ca)
                                     <tr class="table-row-hover">
                                         <td class="px-4 py-3 whitespace-nowrap text-sm">
-                                            <a href="{{ route('cash-advances.show', $ca) }}" class="text-indigo-600 hover:text-indigo-900 font-medium">
+                                            <a href="{{ route('cash-advances.show', $ca) }}" class="text-blue-800 hover:text-blue-900 font-medium">
                                                 {{ $ca->ca_number }}
                                             </a>
                                         </td>
@@ -134,7 +134,7 @@
                                     <td class="px-4 py-3 whitespace-nowrap text-sm text-center">
                                         @if($item->receipt_path)
                                             <a href="{{ asset('storage/' . $item->receipt_path) }}" target="_blank"
-                                               class="inline-flex items-center text-indigo-600 hover:text-indigo-900">
+                                               class="inline-flex items-center text-blue-800 hover:text-blue-900">
                                                 <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                                 </svg>
@@ -182,8 +182,8 @@
                     {{-- Approved by PIC --}}
                     @if($reimbursement->approved_by_pic_at)
                         <li class="ml-6">
-                            <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-100 ring-8 ring-white">
-                                <svg class="h-3 w-3 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                            <span class="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white">
+                                <svg class="h-3 w-3 text-blue-800" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
                                 </svg>
                             </span>
@@ -257,7 +257,7 @@
                         <form method="POST" action="{{ route('reimbursements.approve', $reimbursement) }}">
                             @csrf
                             <button type="submit"
-                                    class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-lg font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 focus:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+                                    class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 to-cyan-600 border border-transparent rounded-lg font-semibold text-xs text-white uppercase tracking-widest hover:from-blue-950 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition ease-in-out duration-150"
                                     onclick="return confirm('Are you sure you want to approve this reimbursement?')">
                                 Approve as PIC
                             </button>
@@ -309,7 +309,7 @@
                 <div class="p-6">
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Payment Evidence</h3>
                     <a href="{{ asset('storage/' . $reimbursement->payment_evidence) }}" target="_blank"
-                       class="inline-flex items-center px-3 py-2 border border-gray-200 text-sm leading-4 font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition">
+                       class="inline-flex items-center px-3 py-2 border border-gray-200 text-sm leading-4 font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
                         <svg class="h-4 w-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>

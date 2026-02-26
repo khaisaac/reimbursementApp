@@ -31,7 +31,8 @@
             <div class="flex-1 flex flex-col min-w-0 lg:ml-64">
                 {{-- Top bar --}}
                 <header class="sticky top-0 z-20 bg-white border-b border-gray-200">
-                    <div class="flex items-center justify-between h-16 px-4 sm:px-6">
+                    {{-- App bar row: hamburger + (desktop heading) + user menu --}}
+                    <div class="flex items-center h-16 px-4 sm:px-6">
                         {{-- Mobile menu button --}}
                         <button @click="sidebarOpen = true" class="lg:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,22 +40,22 @@
                             </svg>
                         </button>
 
-                        {{-- Page heading --}}
-                        <div class="flex-1 min-w-0 ml-4 lg:ml-0">
+                        {{-- Page heading (desktop only - inline in top bar) --}}
+                        <div class="hidden lg:block flex-1 min-w-0 lg:ml-0">
                             @isset($header)
                                 {{ $header }}
                             @endisset
                         </div>
 
                         {{-- User menu --}}
-                        <div class="flex items-center gap-3 ml-4">
-                            <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 ring-1 ring-inset ring-indigo-600/20">
+                        <div class="flex items-center gap-3 ml-auto">
+                            <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 ring-1 ring-inset ring-blue-800/20">
                                 {{ ucfirst(str_replace('_', ' ', Auth::user()->role)) }}
                             </span>
                             <x-dropdown align="right" width="48">
                                 <x-slot name="trigger">
                                     <button class="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 focus:outline-none transition">
-                                        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-blue-900 to-cyan-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
                                             {{ strtoupper(substr(Auth::user()->name, 0, 2)) }}
                                         </div>
                                         <span class="hidden sm:block max-w-[120px] truncate">{{ Auth::user()->name }}</span>
@@ -82,6 +83,13 @@
                             </x-dropdown>
                         </div>
                     </div>
+
+                    {{-- Page heading (mobile only - below app bar, flexible height) --}}
+                    @isset($header)
+                    <div class="lg:hidden px-4 pb-4">
+                        {{ $header }}
+                    </div>
+                    @endisset
                 </header>
 
                 {{-- Page Content --}}
